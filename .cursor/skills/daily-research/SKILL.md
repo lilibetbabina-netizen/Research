@@ -1,13 +1,13 @@
 ---
 name: daily-research
-description: Researches recent physics and mathematics discoveries that advance humanity, then writes dated research notes and sources under research/YYYY-MM-DD/. Use when running daily research, gathering breakthroughs, or preparing material for the daily digest.
+description: Researches recent physics and mathematics discoveries that advance humanity, then writes dated research notes, sources, and a styled HTML page under research/YYYY-MM-DD/. Use when running daily research, gathering breakthroughs, or preparing material for the daily digest.
 ---
 
 # Daily Research (Physics & Maths)
 
 ## Goal
 
-Find recent discoveries in **physics** and **mathematics** that meaningfully move humanity forward. Write structured notes for today (or the date the user specifies).
+Find recent discoveries in **physics** and **mathematics** that meaningfully move humanity forward. Write structured notes **and** a styled HTML reading page for today (or the date the user specifies).
 
 ## Scope
 
@@ -28,11 +28,14 @@ Find recent discoveries in **physics** and **mathematics** that meaningfully mov
 3. For each candidate, record: claim, evidence/source, why it might matter, confidence (high / medium / low).
 4. Score for human-forward impact; keep the strongest items (aim for 3–7; fewer is fine on quiet days).
 5. **Never invent** papers, authors, DOIs, or URLs. If a link cannot be verified, omit it or mark the claim as unverified and exclude from top picks.
-6. Create the folder `research/YYYY-MM-DD/` and write the two files below.
+6. Create the folder `research/YYYY-MM-DD/` and write **all three** outputs below.
+7. Add or update the day link on `research/index.html`.
 
 ## Output files
 
-### `research/YYYY-MM-DD/notes.md`
+Keep digests as simple markdown in `digests/` (separate skill). Research gets the styled HTML.
+
+### 1. `research/YYYY-MM-DD/notes.md`
 
 ```markdown
 # Research notes — YYYY-MM-DD
@@ -56,7 +59,7 @@ Find recent discoveries in **physics** and **mathematics** that meaningfully mov
 Brief list of notable items skipped and why (optional).
 ```
 
-### `research/YYYY-MM-DD/sources.md`
+### 2. `research/YYYY-MM-DD/sources.md`
 
 ```markdown
 # Sources — YYYY-MM-DD
@@ -64,6 +67,23 @@ Brief list of notable items skipped and why (optional).
 1. **Title** — Author/org — URL — one-line note
 ```
 
+### 3. `research/YYYY-MM-DD/index.html`
+
+Self-contained styled page (CSS **inlined** from `research/assets/research.css` so it looks right when opened as a local file):
+
+- Google fonts: Fraunces, Manrope, JetBrains Mono
+- Include `.sky`, `.sky-grid`, `.sky-noise` layers + hero SVG (orbits / wave)
+- Match structure from `research/2026-07-18/index.html`:
+  - `.hero` with large display title
+  - `.finding.field-physics` or `.finding.field-maths` with big `.finding-num`
+  - pills: `.pill.physics` / `.pill.maths` and `.pill.conf-high|medium|low`
+  - sources list + discarded section
+- Content must match `notes.md` / `sources.md` (no extra invented claims).
+
+### 4. Update `research/index.html`
+
+Add the new day at the top of the day list with a one-line summary.
+
 ## After writing
 
-If the user (or automation) also wants a digest, run the **daily-digest** skill next for the same date.
+If the user (or automation) also wants a digest, run the **daily-digest** skill next for the same date (markdown only — no HTML for digests).
