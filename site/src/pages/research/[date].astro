@@ -1,0 +1,41 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  const researchRoot = path.resolve(process.cwd(), '..', 'research');
+  if (!fs.existsSync(researchRoot)) return [];
+
+  return fs
+    .readdirSync(researchRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && /^\d{4}-\d{2}-\d{2}$/.test(entry.name))
+    .map((entry) => ({ params: { date: entry.name } }));
+}
+
+const { date } = Astro.params;
+const researchDir = path.resolve(process.cwd(), '..', 'research', date!);
+const notesPath = path.join(researchDir, 'notes.md');
+const sourcesPath = path.join(researchDir, 'sources.md');
+
+if (!fs.existsSync(notesPath)) {
+  throw new Error(`Missing research notes for ${date}`);
+}
+
+const notesHtml = marked.parse(fs.readFileSync(notesPath, 'utf8'), { async: false }) as string;
+const sourcesHtml = fs.existsSync(sourcesPath)
+  ? (marked.parse(fs.readFileSync(sourcesPath, 'utf8'), { async: false }) as string)
+  : '';
+---
+
+<BaseLayout title={`Research notes — ${date}`} description={`Research notes for ${date}`}>
+  <article class="prose">
+    <p class="meta-row">
+      <a href={`/digests/${date}`}>Daily digest</a>
+      <a href="/">All digests</a>
+    </p>
+    <div set:html={notesHtml} />
+    {sourcesHtml && <div set:html={sourcesHtml} />}
+  </article>
+</BaseLayout>

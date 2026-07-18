@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const digests = (await getCollection('digests')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+---
+
+<BaseLayout title="Forward — Physics & Maths Digests">
+  <section>
+    <h1 class="visually-hidden">Forward</h1>
+    <p class="lede">
+      Daily digests of physics and mathematics discoveries that move humanity forward.
+    </p>
+
+    {digests.length === 0 ? (
+      <p class="empty">No digests yet. The daily automation will publish the first one here.</p>
+    ) : (
+      <ul class="digest-list">
+        {digests.map((digest) => (
+          <li>
+            <a href={`/digests/${digest.id}`}>
+              <time datetime={digest.data.date.toISOString().slice(0, 10)}>
+                {formatDate(digest.data.date)}
+              </time>
+              <h2>{digest.data.title}</h2>
+              <p>{digest.data.summary}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
