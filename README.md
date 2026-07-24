@@ -66,6 +66,15 @@ export PATH="$HOME/.local/node/bin:$PATH"
 cd site && npm install && npm run dev
 ```
 
+## Obsidian
+
+This folder lives inside the **LisaKnowledge** Obsidian vault. Digests and research notes appear there automatically when files are written.
+
+- Hub: [[Forward]] / `Forward.md`
+- Daily Note template: `Templates/Daily Research Link.md`
+- At **08:15** local, a LaunchAgent opens today’s digest in Obsidian (`scripts/open-in-obsidian.sh`)
+- Sundays **09:15**: opens the weekly digest
+
 ## Scope
 
 Physics and mathematics only. Prefer discoveries that clearly advance understanding, capability, or application — not every preprint.
