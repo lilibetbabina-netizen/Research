@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 site/node_modules/
+.infra/site/node_modules/
+.infra/site/dist/
+.infra/site/.astro/
 
 # Build
 site/dist/

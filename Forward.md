@@ -4,13 +4,15 @@ Daily physics and maths research that moves humanity forward.
 
 ## Quick open
 
-- Create/open today’s Daily Note (Obsidian: **Open today's daily note**) — it links to today’s digest and research.
-- Digests: `digests/`
-- Research notes: `research/YYYY-MM-DD/notes.md`
-- Styled HTML: `research/YYYY-MM-DD/index.html`
+- **Open today's daily note** in Obsidian — links to digest + research
+- Or browse `digests/` and `research/`
 
 ## Digests
 
+- [[digests/2026-07-28|2026-07-28]]
+- [[digests/2026-07-27|2026-07-27]]
+- [[digests/2026-07-26|2026-07-26]]
+- [[digests/2026-07-25|2026-07-25]]
 - [[digests/2026-07-24|2026-07-24]]
 - [[digests/2026-07-23|2026-07-23]]
 - [[digests/2026-07-22|2026-07-22]]
@@ -22,6 +24,10 @@ Daily physics and maths research that moves humanity forward.
 
 ## Research
 
+- [[research/2026-07-28/notes|2026-07-28 notes]]
+- [[research/2026-07-27/notes|2026-07-27 notes]]
+- [[research/2026-07-26/notes|2026-07-26 notes]]
+- [[research/2026-07-25/notes|2026-07-25 notes]]
 - [[research/2026-07-24/notes|2026-07-24 notes]]
 - [[research/2026-07-23/notes|2026-07-23 notes]]
 - [[research/2026-07-22/notes|2026-07-22 notes]]
@@ -36,11 +42,13 @@ Daily physics and maths research that moves humanity forward.
 - [[digests/weekly/2026-W30|2026-W30]]
 - [[digests/weekly/2026-W29|2026-W29]]
 
-## Schedule
+## Schedule (Athens / local Mac)
 
-| When (Athens) | What |
-|---------------|------|
-| ~08:00 | Automation writes today’s research + digest |
-| ~08:15 | Obsidian opens today’s digest |
-| Sunday ~09:00 | Weekly digest file |
-| Sunday ~09:15 | Obsidian opens the weekly note |
+| When | What |
+|------|------|
+| ~08:00 | Cursor Automation should commit today's files to GitHub |
+| ~08:05 | Mac **git pull** into this vault |
+| ~08:15 | Obsidian opens today's digest + notes |
+| Sunday ~09:00 / 09:15 | Weekly file + Obsidian open |
+
+If a morning is missing, check Automations → **Run History**, then run `Research/.infra/scripts/open-in-obsidian.sh pull`.
