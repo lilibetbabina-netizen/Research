@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Research — 2026-08-09 · Forward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* Forward Research — inlined from research/assets/research.css */
+:root{--void:#04060c;--panel:rgba(14,22,38,.72);--panel-edge:rgba(140,200,255,.16);--text:#e8f0f8;--muted:#93a7bc;--cyan:#2fe0d2;--cyan-2:#6ef0e6;--gold:#f0c46a;--gold-2:#ffd993;--magenta:#ff7aad;--physics:var(--cyan);--maths:var(--gold);--font-display:"Fraunces","Cormorant Garamond",Georgia,serif;--font-body:"Manrope","Outfit",system-ui,sans-serif;--font-mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,monospace;--max:52rem}
+*,*::before,*::after{box-sizing:border-box}html{color-scheme:dark;scroll-behavior:smooth}
+body{margin:0;min-height:100vh;font-family:var(--font-body);font-size:1.06rem;line-height:1.75;color:var(--text);background:var(--void);overflow-x:hidden}
+.sky{position:fixed;inset:0;z-index:-3;background:radial-gradient(1200px 700px at 12% -10%,rgba(47,224,210,.18),transparent 55%),radial-gradient(900px 600px at 92% 8%,rgba(240,196,106,.14),transparent 50%),radial-gradient(800px 500px at 70% 90%,rgba(90,70,180,.12),transparent 55%),radial-gradient(100% 100% at 50% 50%,#0a1220 0%,var(--void) 70%)}
+.sky-grid{position:fixed;inset:0;z-index:-2;opacity:.4;background-image:linear-gradient(rgba(100,170,220,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(100,170,220,.12) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 20%,#000 20%,transparent 75%);animation:grid-drift 50s linear infinite;pointer-events:none}
+.sky-noise{position:fixed;inset:0;z-index:-1;opacity:.07;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes grid-drift{to{background-position:56px 56px}}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes pulse-soft{0%,100%{opacity:.45}50%{opacity:1}}@keyframes draw-wave{from{stroke-dashoffset:420}to{stroke-dashoffset:0}}
+a{color:var(--cyan-2);text-decoration-thickness:1px;text-underline-offset:.2em}a:hover{color:#fff}
+.shell{width:min(100% - 2rem,calc(var(--max) + 8rem));margin:0 auto;padding:1.5rem 0 5rem}
+.topbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding:.5rem 0 1.5rem;animation:rise .6s ease both}
+.brand{display:inline-flex;align-items:baseline;gap:.55rem;text-decoration:none;color:var(--text);font-family:var(--font-display);font-size:1.85rem;font-weight:600;letter-spacing:-.02em}.brand b{font-weight:500;font-style:italic;color:var(--cyan)}
+.meta-line{margin:0;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.hero{position:relative;min-height:min(72vh,560px);display:grid;align-content:end;padding:2rem 0 2.5rem;margin-bottom:2rem;animation:rise .85s ease .05s both;border-bottom:1px solid var(--panel-edge)}
+.hero-art{position:absolute;inset:0;overflow:hidden;pointer-events:none}.hero-art svg{position:absolute;right:-4%;top:0;width:min(620px,92vw);height:100%;opacity:.9}.hero-art .ring{transform-origin:260px 220px;animation:orbit 48s linear infinite}.hero-art .ring-2{transform-origin:260px 220px;animation:orbit 72s linear infinite reverse}.hero-art .wave{fill:none;stroke:var(--cyan);stroke-width:1.4;stroke-dasharray:420;animation:draw-wave 3.2s ease-out both;filter:drop-shadow(0 0 6px rgba(47,224,210,.55))}.hero-art .dot{fill:var(--gold);animation:pulse-soft 2.8s ease-in-out infinite}
+.eyebrow{position:relative;z-index:1;margin:0 0 1rem;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.hero h1{position:relative;z-index:1;margin:0 0 1.1rem;max-width:11ch;font-family:var(--font-display);font-size:clamp(3.2rem,9vw,5.4rem);font-weight:550;line-height:.95;letter-spacing:-.035em}.hero h1 em{font-style:italic;font-weight:500;background:linear-gradient(120deg,var(--cyan-2),#9ad0ff 45%,var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{position:relative;z-index:1;margin:0;max-width:34rem;color:var(--muted);font-size:1.15rem;line-height:1.65}
+.window-box{position:relative;z-index:1;margin-top:1.75rem;display:inline-block;padding:.95rem 1.2rem;border:1px solid var(--panel-edge);background:linear-gradient(135deg,rgba(47,224,210,.1),rgba(14,22,38,.5));backdrop-filter:blur(10px);font-family:var(--font-mono);font-size:.78rem;line-height:1.6;color:var(--muted);box-shadow:0 0 40px rgba(47,224,210,.08)}.window-box strong{color:var(--cyan-2);font-weight:500}
+.section-label{display:flex;align-items:center;gap:1rem;margin:2.75rem 0 1.25rem;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);animation:rise .7s ease both}.section-label::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(240,196,106,.55),transparent)}
+.findings{display:flex;flex-direction:column;gap:1.5rem}.finding{position:relative;display:grid;grid-template-columns:4.5rem 1fr;gap:.25rem 1.25rem;padding:1.6rem 1.6rem 1.6rem 1.35rem;border:1px solid var(--panel-edge);background:linear-gradient(155deg,rgba(47,224,210,.06),transparent 40%),var(--panel);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 18px 50px rgba(0,0,0,.35);animation:rise .8s ease both;overflow:hidden}
+.finding::after{content:"";position:absolute;inset:auto -20% -40% auto;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(47,224,210,.12),transparent 65%);pointer-events:none}.finding.field-maths{background:linear-gradient(155deg,rgba(240,196,106,.07),transparent 40%),var(--panel)}.finding.field-maths::after{background:radial-gradient(circle,rgba(240,196,106,.12),transparent 65%)}
+.finding:nth-child(1){animation-delay:.08s}.finding:nth-child(2){animation-delay:.14s}.finding:nth-child(3){animation-delay:.2s}.finding:nth-child(4){animation-delay:.26s}.finding:nth-child(5){animation-delay:.32s}.finding:nth-child(6){animation-delay:.38s}
+.finding-num{grid-row:1 / span 3;font-family:var(--font-display);font-size:2.8rem;font-weight:500;line-height:1;letter-spacing:-.04em;color:transparent;background:linear-gradient(180deg,var(--cyan-2),rgba(47,224,210,.15));-webkit-background-clip:text;background-clip:text;padding-top:.15rem}.finding.field-maths .finding-num{background:linear-gradient(180deg,var(--gold-2),rgba(240,196,106,.15));-webkit-background-clip:text;background-clip:text}
+.finding-head{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.pill{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .6rem;border:1px solid transparent;border-radius:999px}.pill.physics{color:var(--cyan-2);background:rgba(47,224,210,.12);border-color:rgba(47,224,210,.35)}.pill.maths{color:var(--gold-2);background:rgba(240,196,106,.12);border-color:rgba(240,196,106,.35)}.pill.conf-high{color:#8fe3b0;background:rgba(80,200,140,.12);border-color:rgba(80,200,140,.35)}.pill.conf-medium{color:var(--gold-2);background:rgba(240,196,106,.12);border-color:rgba(240,196,106,.35)}.pill.conf-low{color:var(--magenta);background:rgba(255,122,173,.12);border-color:rgba(255,122,173,.35)}
+.finding h2{margin:.35rem 0 .85rem;font-family:var(--font-display);font-size:clamp(1.55rem,3vw,2rem);font-weight:550;line-height:1.15;letter-spacing:-.02em}.finding dl{margin:0;display:grid;gap:.9rem}.finding dt{margin:0 0 .25rem;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.finding dd{margin:0;color:var(--text)}.finding dd.muted{color:var(--muted)}
+.sources{list-style:none;margin:0;padding:0}.sources li{display:grid;gap:.2rem;padding:1.05rem 0;border-bottom:1px solid rgba(140,200,255,.12);animation:rise .7s ease both}.sources .src-title{font-family:var(--font-display);font-size:1.28rem;font-weight:550;color:var(--text);text-decoration:none}.sources .src-title:hover{color:var(--cyan-2)}.sources .src-meta{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted)}
+.discarded{padding:1.25rem 1.35rem;border:1px dashed rgba(140,200,255,.22);background:rgba(10,16,28,.55);color:var(--muted);font-size:.98rem}.discarded ul{margin:.55rem 0 0;padding-left:1.15rem}
+.footer{margin-top:3.5rem;padding-top:1.35rem;border-top:1px solid var(--panel-edge);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem 1.5rem;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:700px){.finding{grid-template-columns:1fr}.finding-num{grid-row:auto;font-size:2.2rem}.hero{min-height:480px}.hero-art svg{opacity:.45}}
+</style>
+</head>
+<body>
+<div class="sky"></div><div class="sky-grid"></div><div class="sky-noise"></div>
+<div class="shell">
+<header class="topbar"><a class="brand" href="../index.html">Forward <b>Research</b></a><p class="meta-line">Physics · Maths · 2026-08-09</p></header>
+<section class="hero"><div class="hero-art" aria-hidden="true">
+<svg viewBox="0 0 520 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle class="ring" cx="260" cy="220" r="150" stroke="rgba(47,224,210,0.35)" stroke-width="1" stroke-dasharray="4 10"/>
+  <circle class="ring-2" cx="260" cy="220" r="100" stroke="rgba(240,196,106,0.4)" stroke-width="1" stroke-dasharray="2 8"/>
+  <path class="wave" d="M40 260 C 100 180, 160 320, 220 240 S 340 140, 400 220 S 470 300, 500 230"/>
+  <circle class="dot" cx="260" cy="220" r="4"/>
+</svg></div>
+<p class="eyebrow">Daily laboratory notes</p>
+<h1>Field notes for <em>9 Aug</em></h1>
+<p class="lede">Atomic-scale and thermodynamic probes clarify correlated phases in magic-angle graphene; a breathing kagome crystal unites ferroelectricity, flat-band optics and chiral phonons; a group-theory preprint closes recognition by element orders; and quantum large deviations gain an entropy principle.</p>
+<div class="window-box"><strong>Observation window</strong><br />Primary: 2026-08-07 → 2026-08-09<br />Extended: 2026-08-03 → 2026-08-06 for mathematics only (weekend announcement gap)</div>
+</section>
+<p class="section-label">Findings</p>
+<div class="findings">
+<article class="finding field-physics">
+  <div class="finding-num">01</div>
+  <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high</span></div>
+  <h2>Atomic-scale maps connect valley occupation to topological order in magic-angle graphene</h2>
+  <dl>
+    <div><dt>What changed</dt><dd>Han, Jiang, Tian et al. used low-temperature, gate-tunable scanning tunnelling microscopy and spectroscopy on hBN-aligned magic-angle twisted bilayer graphene. They resolved Coulomb gaps at fillings ν=+2 and +3, tracked the ν=+3 state into a Chern-number-one quantum anomalous Hall state with magnetic field, and imaged sublattice asymmetry inside AA regions. At higher fields, integer and fractional Chern states showed distinct patterns tied to the occupied valley.</dd></div>
+    <div><dt>Why it matters</dt><dd class="muted">Spatially linking sublattice polarization, valley occupation and topological order gives theory a sharper microscopic target and experiments a local diagnostic for engineering Chern phases.</dd></div>
+    <div><dt>Key source</dt><dd><a href="https://doi.org/10.1038/s41467-026-76486-4" rel="noopener">Nature Communications · DOI 10.1038/s41467-026-76486-4</a></dd></div>
+  </dl>
+</article>
+<article class="finding field-physics">
+  <div class="finding-num">02</div>
+  <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high / medium model</span></div>
+  <h2>Entropy plateaus expose local moments and heavy electrons in magic-angle graphene</h2>
+  <dl>
+    <div><dt>What changed</dt><dd>Zhang, Wu, Călugăru et al. combined high-resolution planar tunnelling spectroscopy with inverse-compressibility and entropy measurements. Filling-dependent mass enhancement is consistent with localized–itinerant hybridization in a Kondo-lattice description. Two entropy plateaus encode an eightfold-to-fourfold reduction in local-moment degeneracy, consistent with strain-mediated symmetry breaking.</dd></div>
+    <div><dt>Why it matters</dt><dd class="muted">A tunable two-dimensional heavy-fermion platform, with entropy directly counting local-moment states, could make the links among heavy quasiparticles, topology, superconductivity and quantum criticality more controllable.</dd></div>
+    <div><dt>Key source</dt><dd><a href="https://doi.org/10.1038/s41467-026-76179-y" rel="noopener">Nature Communications · DOI 10.1038/s41467-026-76179-y</a></dd></div>
+  </dl>
+</article>
+<article class="finding field-physics">
+  <div class="finding-num">03</div>
+  <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high</span></div>
+  <h2>A breathing kagome crystal combines ferroelectricity, flat-band optics and chiral phonons</h2>
+  <dl>
+    <div><dt>What changed</dt><dd>Yu, Sui, Liu et al. combined structural, electrical, optical and theoretical probes of layered Nb<sub>3</sub>Cl<sub>8</sub>. They report breathing ferroelectricity associated with alternating triangle distortions and van der Waals gaps; exciton-like optical peaks involving flat bands in thin samples but a semiconductor-like edge in thick samples; strong optical activity; and multiple chiral phonons.</dd></div>
+    <div><dt>Why it matters</dt><dd class="muted">The same exfoliable material joins switchable polarization, geometrically flat electronic bands and handed lattice vibrations, creating a compact testbed for coupled charge, lattice and magnetic physics.</dd></div>
+    <div><dt>Key source</dt><dd><a href="https://doi.org/10.1038/s41467-026-76538-9" rel="noopener">Nature Communications · DOI 10.1038/s41467-026-76538-9</a></dd></div>
+  </dl>
+</article>
+<article class="finding field-maths">
+  <div class="finding-num">04</div>
+  <div class="finding-head"><span class="pill maths">maths</span><span class="pill conf-medium">medium</span></div>
+  <h2>Element-order spectra now classify every finite simple group</h2>
+  <dl>
+    <div><dt>What changed</dt><dd>Grechkoseeva, Staroletov &amp; Vasil'ev complete the recognition problem for finite simple groups using only the set of orders of their elements. They identify cases with infinitely many isospectral groups, two exceptional pairs with exactly two possibilities, and show that all other isospectral groups are known almost-simple extensions.</dd></div>
+    <div><dt>Why it matters</dt><dd class="muted">This closes a decades-long classification programme around a deliberately sparse algebraic fingerprint and precisely marks what element-order data can reconstruct.</dd></div>
+    <div><dt>Key source</dt><dd><a href="https://arxiv.org/abs/2608.01754" rel="noopener">arXiv:2608.01754 · preprint</a></dd></div>
+  </dl>
+</article>
+<article class="finding field-physics">
+  <div class="finding-num">05</div>
+  <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-medium">medium</span></div>
+  <h2>Quantum rare events acquire a practical large-deviation principle</h2>
+  <dl>
+    <div><dt>What changed</dt><dd>Green, Gupta &amp; Premkumar develop a framework for probability tails in open quantum systems. They track a thermal-to-quantum crossover in an anharmonic oscillator and find more generally that dominant rare fluctuations minimize measurement-induced relative entropy. Their stochastic-inflation application yields a stationary long-wavelength density matrix that breaks KMS symmetry and detailed balance.</dd></div>
+    <div><dt>Why it matters</dt><dd class="muted">An entropy-based variational principle could make exponentially costly rare-event probabilities more tractable in open quantum systems and cosmology.</dd></div>
+    <div><dt>Key source</dt><dd><a href="https://arxiv.org/abs/2608.06319" rel="noopener">arXiv:2608.06319 · preprint</a></dd></div>
+  </dl>
+</article>
+</div>
+<p class="section-label">Sources</p>
+<ol class="sources">
+  <li><a class="src-title" href="https://doi.org/10.1038/s41467-026-76486-4" rel="noopener">Atomically resolved wavefunction of integer and fractional quantum anomalous Hall states</a><span class="src-meta">Han, Jiang, Tian et al. · Nature Communications · 8 Aug 2026</span></li>
+  <li><a class="src-title" href="https://doi.org/10.1038/s41467-026-76179-y" rel="noopener">Entropy plateaus and heavy-fermion mass renormalization in magic-angle graphene</a><span class="src-meta">Zhang, Wu, Călugăru et al. · Nature Communications · 8 Aug 2026</span></li>
+  <li><a class="src-title" href="https://doi.org/10.1038/s41467-026-76538-9" rel="noopener">Breathing ferroelectricity, flat-bands and multiple chiral phonons in Nb₃Cl₈</a><span class="src-meta">Yu, Sui, Liu et al. · Nature Communications · 8 Aug 2026</span></li>
+  <li><a class="src-title" href="https://arxiv.org/abs/2608.01754" rel="noopener">The problem of recognition of finite simple groups by element orders is solved</a><span class="src-meta">Grechkoseeva, Staroletov &amp; Vasil'ev · arXiv:2608.01754</span></li>
+  <li><a class="src-title" href="https://arxiv.org/abs/2608.06319" rel="noopener">The Quantum Mechanics of Rare Events</a><span class="src-meta">Green, Gupta &amp; Premkumar · arXiv:2608.06319</span></li>
+  <li><a class="src-title" href="https://doi.org/10.1038/s41524-026-02254-z" rel="noopener">Plasmon assisted superconductivity in LiTi₂O₄</a><span class="src-meta">Petocchi et al. · npj Computational Materials · watchlist</span></li>
+  <li><a class="src-title" href="https://arxiv.org/abs/2608.02066" rel="noopener">Every quasiperfect number has at least eight distinct prime factors</a><span class="src-meta">Toyohara, Tao &amp; Yao · arXiv:2608.02066 · watchlist</span></li>
+</ol>
+<p class="section-label">Out of scope</p>
+<div class="discarded"><ul>
+  <li>Plasmon-assisted superconductivity in LiTi<sub>2</sub>O<sub>4</sub> — watchlist because the pairing account is computational and material-specific.</li>
+  <li>The quasiperfect-number factor bound — watchlist pending independent scrutiny of the large computational elimination.</li>
+  <li>BESIII X(2370) glueball-dominance announcement — already screened on 7 Aug; its underlying preprint is from 22 Jul.</li>
+  <li>Molecular-orbital tomography coverage dated 8 Aug refers to a paper published 19 Jun; excluded as news lag.</li>
+  <li>Biology/medicine-only papers, product announcements and unverified secondary claims were excluded.</li>
+</ul></div>
+<footer class="footer"><span>notes.md · sources.md</span><span>Obsidian: LisaKnowledge</span></footer>
+</div>
+</body>
+</html>
