@@ -1,0 +1,12 @@
+# Sources — 2026-08-09
+
+1. **Atomically resolved wavefunction of integer and fractional quantum anomalous Hall states in twisted bilayer graphene** — Han, Jiang, Tian, Li, Watanabe, Taniguchi, Zhang, Jiang & Mao — https://doi.org/10.1038/s41467-026-76486-4 — Nat. Commun. VoR 8 Aug; STM/STS of IQAH/FQAH wavefunctions.
+2. **Entropy plateaus, combinatorial degeneracy, local moments, and heavy-fermion mass renormalization in magic-angle graphene** — Zhang, Wu, Călugăru, Hu, Taniguchi, Wanatabe, Bernevig & Andrei — https://doi.org/10.1038/s41467-026-76179-y — Nat. Commun. VoR 8 Aug; entropy + inverse-compressibility evidence for topological heavy fermions.
+3. **Optomechanical detection of individual gas collisions** — Tseng, Hardy, Penny, Lowe, Baeza-Rubio, Carney & Moore — https://doi.org/10.1103/xtzh-6t1f — PRL VoR 7 Aug; preprint https://arxiv.org/abs/2604.18371.
+4. **Composable continuous-variable multi-user QKD with discrete modulation: theory and implementation** — Kanitschar, Hajomer, Hentschel, Gehring & Pacher — https://doi.org/10.1364/optica.588301 — Optica VoR 8 Aug; 10 km PON multipoint CV-QKD.
+5. **A proof of Andersen's rainbow path conjecture for large n** — Bowtell, Montgomery, Müyesser & Pokrovskiy — https://arxiv.org/abs/2608.06369 — 6 Aug preprint; also Gyárfás–Sárközy Latin-square transversal for large n.
+6. **A unified framework for non-Hermitian localization with boundary-insensitive modes and electric-magnetic analogy** — Wei, Fan, Cao, Ma, Guo, Ren & Kou — https://doi.org/10.1038/s42005-026-02793-3 — Commun. Phys. VoR 8 Aug; watchlist.
+7. **Integrated bright source of polarization-entangled photons using lithium niobate photonic chips** — Kim et al. — https://doi.org/10.1364/optica.585293 — Optica VoR 8 Aug; watchlist.
+8. **Pair Breaking and Dimensionality in Spin-Orbit Coupled Superconductors** — Dorrian, Ohno, Williams, Llanos & Falson — https://doi.org/10.1103/wfy7-zbwf — PRL VoR 7 Aug; preprint https://arxiv.org/abs/2605.06514; watchlist.
+9. **Precision Spectroscopy of the Fine and Hyperfine Structures of High Molecular Rydberg-Stark States: Metrology of Molecular Hydrogen Ions** — Doran, Jeckel, Beyer, Jungen & Merkt — https://doi.org/10.1103/5rsv-mb6x — PRL VoR 7 Aug; watchlist.
+10. **Maximizing directed cycles in tournaments** — Fang & Huang — https://arxiv.org/abs/2608.06238 — 6 Aug preprint confirming Bartley–Day carousel conjecture; watchlist.
