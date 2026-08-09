@@ -17,7 +17,7 @@
 - **Field:** physics
 - **What changed:** Zhang, Wu, Călugăru et al. (Nature Communications, 8 Aug 2026; DOI 10.1038/s41467-026-76179-y) combined high-resolution planar tunnelling spectroscopy with inverse-compressibility and entropy measurements in magic-angle twisted bilayer graphene. The filling-dependent mass enhancement is consistent with hybridization between localized and itinerant electrons in a Kondo-lattice description. Two entropy plateaus encode an eightfold-to-fourfold reduction in local-moment degeneracy, consistent with strain-mediated symmetry breaking in the topological heavy-fermion model.
 - **Why it matters:** Heavy-fermion physics has traditionally required chemically complex three-dimensional compounds. A tunable two-dimensional moiré platform, with entropy directly counting local-moment states, could make the interplay of heavy quasiparticles, topology, superconductivity and quantum criticality more controllable.
-- **Confidence:** high for the measured plateaus and mass renormalization; medium for the model assignment
+- **Confidence:** medium
 - **Key source:** https://doi.org/10.1038/s41467-026-76179-y
 
 ### 3. A breathing kagome crystal combines ferroelectricity, flat-band optics and chiral phonons
@@ -31,14 +31,14 @@
 - **Field:** maths
 - **What changed:** Grechkoseeva, Staroletov & Vasil'ev (arXiv:2608.01754, 3 Aug 2026) complete the recognition problem for finite simple groups using only the set of orders of their elements. For every finite simple group L, they determine whether infinitely many non-isomorphic finite groups share its spectrum; identify the two exceptional isospectral pairs with exactly two possibilities; and show that in all other cases every isospectral group is an already-known almost simple extension of L.
 - **Why it matters:** This closes a classification programme developed over decades around a deliberately sparse fingerprint of group structure. It clarifies exactly how much of a finite simple group can be reconstructed when multiplication is hidden and only possible cycle lengths remain.
-- **Confidence:** medium (substantial synthesis/completion preprint; not yet peer reviewed)
+- **Confidence:** medium
 - **Key source:** https://arxiv.org/abs/2608.01754
 
 ### 5. Quantum rare events acquire a practical large-deviation principle
 - **Field:** physics
 - **What changed:** Green, Gupta & Premkumar (arXiv:2608.06319, announced 7 Aug 2026) develop a calculational framework for tails of probability distributions in open quantum systems. In an anharmonic oscillator coupled to a bath, they track the crossover from thermal to quantum-dominated fluctuations; more generally, they find that dominant rare fluctuations minimize measurement-induced relative entropy. Applied to stochastic inflation, the framework yields a stationary long-wavelength density matrix that breaks Kubo–Martin–Schwinger symmetry and does not obey detailed balance.
 - **Why it matters:** Rare fluctuations control phenomena from escape processes to unusually large primordial density perturbations, yet direct simulation becomes exponentially costly in the tails. An entropy-based variational principle could make such probabilities more tractable across open quantum systems and cosmology.
-- **Confidence:** medium (theoretical preprint)
+- **Confidence:** medium
 - **Key source:** https://arxiv.org/abs/2608.06319
 
 ## Discarded / out of scope
