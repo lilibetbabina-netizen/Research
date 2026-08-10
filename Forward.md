@@ -9,6 +9,7 @@ Daily physics and maths research that moves humanity forward.
 
 ## Digests
 
+- [[digests/2026-08-10|2026-08-10]]
 - [[digests/2026-08-09|2026-08-09]]
 - [[digests/2026-08-08|2026-08-08]]
 - [[digests/2026-08-07|2026-08-07]]
@@ -35,6 +36,7 @@ Daily physics and maths research that moves humanity forward.
 
 ## Research
 
+- [[research/2026-08-10/notes|2026-08-10 notes]]
 - [[research/2026-08-09/notes|2026-08-09 notes]]
 - [[research/2026-08-08/notes|2026-08-08 notes]]
 - [[research/2026-08-07/notes|2026-08-07 notes]]

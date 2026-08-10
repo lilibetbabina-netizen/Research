@@ -1,0 +1,12 @@
+# Sources — 2026-08-10
+
+1. **Observation of correlated plasmons in low-valence nickelates** — Shen, He, Sears, Guo, Luo, Roll, Li, Pelliciari, He, Božović et al. — https://doi.org/10.1103/3ycq-jclr — PRX VoR 7 Aug; RIXS plasmons in Pr₄Ni₃O₈; preprint https://arxiv.org/abs/2601.12160.
+2. **Breathing ferroelectricity, flat-bands and multiple chiral phonons in van der Waals breathing kagome Nb3Cl8** — Yu, Sui, Liu, Yang, Li, Ren, Chu, Yue et al. — https://doi.org/10.1038/s41467-026-76538-9 — Nat. Commun. VoR 8 Aug; breathing ferroelectricity + flat bands + chiral phonons.
+3. **Experimental causal inference from measurements alone in the presence of spatial and temporal quantum correlations** — Liu, Liu, Chen, Qiu, Vedral, Nie, Dahlsten & Lu — https://doi.org/10.1038/s41534-026-01337-5 — npj QI VoR 10 Aug; NMR scattering-circuit causal inference; related arXiv:2411.06051, arXiv:2411.06052.
+4. **Composite Bogoliubov Fermi Liquid in a Half-Filled Chern Band** — Shi & Nosov — https://doi.org/10.1103/wq3w-cb7f — PRL VoR 7 Aug; CBFL theory; preprint https://arxiv.org/abs/2601.09924.
+5. **Modularity of Higher Theta Series III: Proof of the Modularity Conjecture** — Feng, Yun & Zhang — https://arxiv.org/abs/2608.07173 — 7 Aug preprint; modularity (and supermodularity) for higher theta series on shtukas.
+6. **Characterization of state complexity in adaptive quantum circuits** — Liu, Chen & Ma — https://doi.org/10.1038/s41534-026-01326-8 — npj QI VoR 7 Aug; adaptive state-complexity bounds; watchlist.
+7. **Quantum simulation with Rydberg ions in a Penning trap** — Martins, Hennrich, Schmidt-Kaler & Lesanovsky — https://doi.org/10.1103/lsny-pn24 — PRX Quantum VoR 7 Aug; Rydberg-ion Penning-trap simulator proposal; preprint https://arxiv.org/abs/2601.01626; watchlist.
+8. **Negative hybridization: A potential cure for braiding with imperfect Majorana modes** — Peeters, Hodge & Rachel — https://doi.org/10.1103/fqyv-r35f — Phys. Rev. Res. VoR 8 Aug; negative Majorana hybridization; preprint https://arxiv.org/abs/2602.09107; watchlist.
+9. **Symmetry-driven thermalization via finite de Finetti theorems** — Singh & Cerf — https://doi.org/10.1103/df89-tdks — PRL VoR 3 Aug; finite de Finetti thermalization; preprint https://arxiv.org/abs/2604.09410; watchlist.
+10. **Towards the Fontaine--Mazur conjecture for GL(2)** — Thorne — https://arxiv.org/abs/2608.07186 — 7 Aug preprint; new Fontaine–Mazur cases for GL(2); watchlist.
