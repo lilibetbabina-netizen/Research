@@ -1,0 +1,8 @@
+# Sources — 2026-08-19
+
+1. **Ultrafast and high resolution spatial light modulation for cold atoms** — Alexander Dennisovich Deters, Yanfei Li, Alexander Douglas, Markus Greiner & Aaron W. Young — https://arxiv.org/abs/2608.18071 — 18 Aug preprint; demonstrated >84 MFPS optical patterning and tweezer motion.
+2. **Quantum sensors that compute: quantum computational magnetic-field sensing using a superconducting qubit** — Purnendu Sen, Mathieu Ouellet, Saeed A. Khan, Wayne Wang, Sridhar Prabhu, Alen Senanian, William P. Banner, William D. Oliver & Peter L. McMahon — https://arxiv.org/abs/2608.17400 — 18 Aug preprint; experimental task-specific sensing with one transmon.
+3. **Data-driven discovery and rapid, direct synthesis of MXenes** — Ali Saffar Shamshirgar, Guilherme Ribeiro Portugal, Soheil Ershadrad, Roman Ivanov, Martin Dahlqvist, Florian Chabanais, Sanjay Chakraborty, Rainer Traksmaa, Irina Hussainova, Fredrik Heintz, Per O. Å. Persson & Johanna Rosen — https://arxiv.org/abs/2608.16644 — 17 Aug preprint; database mining plus synthesis of rare-earth multilayer MXenes.
+4. **A dimension-free weak-type (1,1) bound for the vector Riesz transform on ℝⁿ** — Yuyuan Ouyang, Daniel Spector & Cody B. Stockdale — https://arxiv.org/abs/2608.18068 — 18 Aug preprint; constant-2 bound settles Stein’s 1986 problem.
+5. **A Complete Classification of Complex Hadamard Matrices of Order Six** — Mateo Cárdenes Wuttig & Joseph Tindall — https://arxiv.org/abs/2608.18053 — 18 Aug preprint; branch-complete classification with accompanying Lean formalization.
+6. **On Chern’s conjecture for minimal submanifolds of the sphere** — Benjy Firester & Raphael Tsiamis — https://arxiv.org/abs/2608.18074 — 18 Aug preprint; high-codimension counterexamples to discreteness.
