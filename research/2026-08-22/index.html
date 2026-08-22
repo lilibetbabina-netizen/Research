@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Research — 2026-08-22 · Forward</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* Forward Research — embedded copy lives in each index.html <style> too */
+
+:root {
+  --void: #04060c;
+  --panel: rgba(14, 22, 38, 0.72);
+  --panel-edge: rgba(140, 200, 255, 0.16);
+  --text: #e8f0f8;
+  --muted: #93a7bc;
+  --cyan: #2fe0d2;
+  --cyan-2: #6ef0e6;
+  --gold: #f0c46a;
+  --gold-2: #ffd993;
+  --magenta: #ff7aad;
+  --physics: var(--cyan);
+  --maths: var(--gold);
+  --font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", "Outfit", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --max: 52rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { color-scheme: dark; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1.06rem;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--void);
+  overflow-x: hidden;
+}
+
+/* Layered cosmos */
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(1200px 700px at 12% -10%, rgba(47, 224, 210, 0.18), transparent 55%),
+    radial-gradient(900px 600px at 92% 8%, rgba(240, 196, 106, 0.14), transparent 50%),
+    radial-gradient(800px 500px at 70% 90%, rgba(90, 70, 180, 0.12), transparent 55%),
+    radial-gradient(100% 100% at 50% 50%, #0a1220 0%, var(--void) 70%);
+}
+
+.sky-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.4;
+  background-image:
+    linear-gradient(rgba(100, 170, 220, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 170, 220, 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 20%, #000 20%, transparent 75%);
+  animation: grid-drift 50s linear infinite;
+  pointer-events: none;
+}
+
+.sky-noise {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.07;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes grid-drift {
+  to { background-position: 56px 56px; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 1; }
+}
+
+@keyframes draw-wave {
+  from { stroke-dashoffset: 420; }
+  to { stroke-dashoffset: 0; }
+}
+
+a {
+  color: var(--cyan-2);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { color: #fff; }
+
+.shell {
+  width: min(100% - 2rem, calc(var(--max) + 8rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 5rem;
+}
+
+/* Top */
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0 1.5rem;
+  animation: rise 0.6s ease both;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.brand b {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--cyan);
+}
+
+.meta-line {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Hero composition */
+.hero {
+  position: relative;
+  min-height: min(72vh, 560px);
+  display: grid;
+  align-content: end;
+  padding: 2rem 0 2.5rem;
+  margin-bottom: 2rem;
+  animation: rise 0.85s ease 0.05s both;
+  border-bottom: 1px solid var(--panel-edge);
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-art svg {
+  position: absolute;
+  right: -4%;
+  top: 0;
+  width: min(620px, 92vw);
+  height: 100%;
+  opacity: 0.9;
+}
+
+.hero-art .ring {
+  transform-origin: 260px 220px;
+  animation: orbit 48s linear infinite;
+}
+.hero-art .ring-2 {
+  transform-origin: 260px 220px;
+  animation: orbit 72s linear infinite reverse;
+}
+.hero-art .wave {
+  fill: none;
+  stroke: var(--cyan);
+  stroke-width: 1.4;
+  stroke-dasharray: 420;
+  animation: draw-wave 3.2s ease-out both;
+  filter: drop-shadow(0 0 6px rgba(47, 224, 210, 0.55));
+}
+.hero-art .dot {
+  fill: var(--gold);
+  animation: pulse-soft 2.8s ease-in-out infinite;
+}
+
+.eyebrow {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 1.1rem;
+  max-width: 11ch;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9vw, 5.4rem);
+  font-weight: 550;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(120deg, var(--cyan-2), #9ad0ff 45%, var(--gold-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lede {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 34rem;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.window-box {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.75rem;
+  display: inline-block;
+  padding: 0.95rem 1.2rem;
+  border: 1px solid var(--panel-edge);
+  background: linear-gradient(135deg, rgba(47, 224, 210, 0.1), rgba(14, 22, 38, 0.5));
+  backdrop-filter: blur(10px);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--muted);
+  box-shadow: 0 0 40px rgba(47, 224, 210, 0.08);
+}
+.window-box strong {
+  color: var(--cyan-2);
+  font-weight: 500;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.75rem 0 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  animation: rise 0.7s ease both;
+}
+.section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(240, 196, 106, 0.55), transparent);
+}
+
+.findings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.finding {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0.25rem 1.25rem;
+  padding: 1.6rem 1.6rem 1.6rem 1.35rem;
+  border: 1px solid var(--panel-edge);
+  background:
+    linear-gradient(155deg, rgba(47, 224, 210, 0.06), transparent 40%),
+    var(--panel);
+  backdrop-filter: blur(14px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 18px 50px rgba(0, 0, 0, 0.35);
+  animation: rise 0.8s ease both;
+  overflow: hidden;
+}
+
+.finding::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -40% auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(47, 224, 210, 0.12), transparent 65%);
+  pointer-events: none;
+}
+
+.finding.field-maths {
+  background:
+    linear-gradient(155deg, rgba(240, 196, 106, 0.07), transparent 40%),
+    var(--panel);
+}
+.finding.field-maths::after {
+  background: radial-gradient(circle, rgba(240, 196, 106, 0.12), transparent 65%);
+}
+
+.finding:nth-child(1) { animation-delay: 0.08s; }
+.finding:nth-child(2) { animation-delay: 0.14s; }
+.finding:nth-child(3) { animation-delay: 0.2s; }
+.finding:nth-child(4) { animation-delay: 0.26s; }
+.finding:nth-child(5) { animation-delay: 0.32s; }
+.finding:nth-child(6) { animation-delay: 0.38s; }
+
+.finding-num {
+  grid-row: 1 / span 3;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  background: linear-gradient(180deg, var(--cyan-2), rgba(47, 224, 210, 0.15));
+  -webkit-background-clip: text;
+  background-clip: text;
+  padding-top: 0.15rem;
+}
+
+.finding.field-maths .finding-num {
+  background: linear-gradient(180deg, var(--gold-2), rgba(240, 196, 106, 0.15));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.finding-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.pill {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+}
+.pill.physics {
+  color: var(--cyan-2);
+  background: rgba(47, 224, 210, 0.12);
+  border-color: rgba(47, 224, 210, 0.35);
+}
+.pill.maths {
+  color: var(--gold-2);
+  background: rgba(240, 196, 106, 0.12);
+  border-color: rgba(240, 196, 106, 0.35);
+}
+.pill.conf-high {
+  color: #8fe3b0;
+  background: rgba(80, 200, 140, 0.12);
+  border-color: rgba(80, 200, 140, 0.35);
+}
+.pill.conf-medium {
+  color: var(--gold-2);
+  background: rgba(240, 196, 106, 0.12);
+  border-color: rgba(240, 196, 106, 0.35);
+}
+.pill.conf-low {
+  color: var(--magenta);
+  background: rgba(255, 122, 173, 0.12);
+  border-color: rgba(255, 122, 173, 0.35);
+}
+
+.finding h2 {
+  margin: 0.35rem 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2rem);
+  font-weight: 550;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.finding dl {
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.finding dt {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.finding dd {
+  margin: 0;
+  color: var(--text);
+}
+.finding dd.muted { color: var(--muted); }
+
+.eq {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--cyan-2);
+  padding: 0 0.15em;
+}
+
+.sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sources li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid rgba(140, 200, 255, 0.12);
+  animation: rise 0.7s ease both;
+}
+
+.sources .src-title {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 550;
+  color: var(--text);
+  text-decoration: none;
+}
+.sources .src-title:hover { color: var(--cyan-2); }
+
+.sources .src-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.discarded {
+  padding: 1.25rem 1.35rem;
+  border: 1px dashed rgba(140, 200, 255, 0.22);
+  background: rgba(10, 16, 28, 0.55);
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.discarded ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.footer {
+  margin-top: 3.5rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--panel-edge);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.day-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.day-list a {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  padding: 1.25rem 1rem;
+  margin: 0 -1rem;
+  border: 1px solid transparent;
+  border-bottom-color: rgba(140, 200, 255, 0.12);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.day-list a:hover {
+  transform: translateX(6px);
+  background: rgba(47, 224, 210, 0.05);
+  border-color: rgba(47, 224, 210, 0.2);
+}
+.day-list time {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  padding-top: 0.45rem;
+}
+.day-list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 550;
+  color: var(--text);
+}
+.day-list span {
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .finding { grid-template-columns: 1fr; }
+  .finding-num { grid-row: auto; font-size: 2.2rem; }
+  .day-list a { grid-template-columns: 1fr; gap: 0.35rem; }
+  .hero { min-height: 480px; }
+  .hero-art svg { opacity: 0.45; }
+}
+
+</style></head><body>
+<div class="sky"></div><div class="sky-grid"></div><div class="sky-noise"></div>
+<div class="shell"><header class="topbar"><a class="brand" href="../index.html">Forward <b>Research</b></a><p class="meta-line">Physics · Maths · 2026-08-22</p></header>
+<section class="hero"><div class="hero-art" aria-hidden="true">
+<svg viewBox="0 0 520 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle class="ring" cx="260" cy="220" r="150" stroke="rgba(47,224,210,0.35)" stroke-width="1" stroke-dasharray="4 10"/>
+  <circle class="ring-2" cx="260" cy="220" r="100" stroke="rgba(240,196,106,0.4)" stroke-width="1" stroke-dasharray="2 8"/>
+  <path class="wave" d="M40 260 C 100 180, 160 320, 220 240 S 340 140, 400 220 S 470 300, 500 230"/>
+  <circle class="dot" cx="260" cy="220" r="4"/>
+</svg></div><p class="eyebrow">Daily laboratory notes</p>
+<h1>Field notes for <em>22 Aug</em></h1>
+<p class="lede">Free-space optical pulses carry record-amplitude squeezed cat states, neutron scattering catches collective copper hops in a superionic crystal, an acoustic lattice reveals erratic non-Hermitian skin localization, worldline QFT pushes black-hole scattering to fifth post-Minkowskian and second self-force order, new resource estimates frame quantum risk to elliptic-curve blockchains, LOCC work tests when pure states still look thermal, and a fifty-year Banach-space asymptotic for Schäffer’s matrix inequality is settled.</p>
+<div class="window-box"><strong>Observation window</strong><br />Primary: 2026-08-21 → 2026-08-22 (Europe/Athens Saturday run)<br />Extended: 20–21 Aug maths arXiv (Schäffer asymptotics; weekend journal VoRs thin for pure maths)</div></section>
+<p class="section-label">Findings</p><div class="findings">
+<article class="finding field-physics">
+        <div class="finding-num">01</div>
+        <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high</span></div>
+        <h2>Large squeezed cat states on free-space optical pulses</h2>
+        <dl>
+          <div><dt>What changed</dt><dd>Caron, Simon, Basset, Journet &amp; Tualle-Brouri (Physical Review X, VoR 21 Aug 2026; DOI 10.1103/q2h3-58pz; arXiv:2601.09672) generate large-amplitude squeezed coherent-state superpositions on free-space optical pulses by mixing Fock states <span class="eq">|1⟩</span> and <span class="eq">|2⟩</span> on a tunable beam splitter and heralding with homodyne detection. They reach amplitude <span class="eq">α = 2.47</span> with squeezing parameter <span class="eq">z = 0.56</span>, report three well-resolved negative Wigner regions, and obtain fidelity 0.53 with the target squeezed odd cat — values they state exceed prior free-space reports.</dd></div>
+          <div><dt>Why it matters</dt><dd>Large non-Gaussian optical states are a bottleneck for continuous-variable quantum information; pushing cat amplitudes higher strengthens temporal breeding routes toward universal CV processing.</dd></div>
+          <div><dt>Source</dt><dd><a href="https://doi.org/10.1103/q2h3-58pz" rel="noopener">doi.org/10.1103/q2h3-58pz</a></dd></div>
+        </dl>
+</article>
+<article class="finding field-physics">
+        <div class="finding-num">02</div>
+        <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high</span></div>
+        <h2>Collective cation hopping seen in a superionic crystal</h2>
+        <dl>
+          <div><dt>What changed</dt><dd>Lin, Gupta, Ouyang, Wilson, Pogodin, Rahman, Zevalkink, Stewart and collaborators (Physical Review X, VoR 21 Aug 2026; DOI 10.1103/lx5w-x6wl) use single-crystal neutron scattering on the argyrodite <span class="eq">Cu<sub>7</sub>PS<sub>6</sub></span> to access full four-dimensional space–time correlations of ionic motion. Coherent quasielastic neutron scattering plus diffuse scattering reveal short-range dynamical correlations among diffusing Cu ions — direct experimental evidence of collective hopping — and machine-learned molecular dynamics reproduces the measurements while identifying the dominant collective hopping motif.</dd></div>
+          <div><dt>Why it matters</dt><dd>Superionic conductors sit between solid and liquid; proving that ions hop collectively, not just independently, sharpens the microscopic picture that underpins solid-state electrolytes.</dd></div>
+          <div><dt>Source</dt><dd><a href="https://doi.org/10.1103/lx5w-x6wl" rel="noopener">doi.org/10.1103/lx5w-x6wl</a></dd></div>
+        </dl>
+</article>
+<article class="finding field-physics">
+        <div class="finding-num">03</div>
+        <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high</span></div>
+        <h2>Erratic non-Hermitian skin localization in an acoustic lattice</h2>
+        <dl>
+          <div><dt>What changed</dt><dd>Zhong, Kim, Longhi &amp; Jing (Nature Communications, VoR 21 Aug 2026; DOI 10.1038/s41467-026-76908-3; arXiv:2601.19749) experimentally realise erratic non-Hermitian skin localization (ENHSL) in an acoustic lattice implementing a disordered Hatano–Nelson chain with imaginary gauge fields. Green’s-function spectroscopy and time-resolved measurements reconstruct the complex spectrum and eigenstates and show ballistic wave-packet dynamics with macroscopic, disorder-dependent localization at irregular bulk positions and subexponential decay, tied to stochastic interfaces from random-walk order statistics.</dd></div>
+          <div><dt>Why it matters</dt><dd>Non-Hermitian skin physics usually pins states to edges; ENHSL shows disorder can relocate macroscopic localization into the bulk, rewriting bulk–boundary intuition for open wave systems.</dd></div>
+          <div><dt>Source</dt><dd><a href="https://doi.org/10.1038/s41467-026-76908-3" rel="noopener">doi.org/10.1038/s41467-026-76908-3</a></dd></div>
+        </dl>
+</article>
+<article class="finding field-physics">
+        <div class="finding-num">04</div>
+        <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high</span></div>
+        <h2>Black-hole scattering at fifth post-Minkowskian and second self-force order</h2>
+        <dl>
+          <div><dt>What changed</dt><dd>Driesse, Jakobsen, Mogull, Nega, Plefka, Sauer &amp; Usovitsch (Physical Review Letters, VoR 21 Aug 2026; DOI 10.1103/4dvk-nglx; arXiv:2601.16256) compute conservative scattering angle and impulse for classical black-hole scattering at fifth post-Minkowskian and second self-force order with worldline quantum field theory. The four-loop calculation reduces hundreds of master integrals across four families, producing multiple polylogarithms and iterated integrals with a <span class="eq">K<sub>3</sub></span> period, and isolates a spurious velocity divergence at <span class="eq">v/c = √8/3</span> that must cancel against radiative-memory contributions.</dd></div>
+          <div><dt>Why it matters</dt><dd>High-order PM/SF waveforms feed next-generation gravitational-wave template banks; pushing the conservative sector to 5PM-2SF is a concrete step on that precision ladder.</dd></div>
+          <div><dt>Source</dt><dd><a href="https://doi.org/10.1103/4dvk-nglx" rel="noopener">doi.org/10.1103/4dvk-nglx</a></dd></div>
+        </dl>
+</article>
+<article class="finding field-physics">
+        <div class="finding-num">05</div>
+        <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-high">high</span></div>
+        <h2>Resource estimates for quantum attacks on elliptic-curve blockchains</h2>
+        <dl>
+          <div><dt>What changed</dt><dd>Babbush, Zalcman, Gidney, Broughton, Khattar, Neven, Bergamaschi, Drake and collaborators (PRX Quantum, VoR 21 Aug 2026; DOI 10.1103/j3xf-bw18) give new resource estimates for Shor’s algorithm against the 256-bit elliptic-curve discrete logarithm on secp256k1 — the curve behind major cryptocurrencies — showing executions with either ≤1200 logical qubits and ≤90 million Toffoli gates or ≤1450 logical qubits and ≤70 million Toffoli gates. They validate the estimates with a zero-knowledge proof without disclosing attack vectors, and discuss superconducting timing under 10<sup>−3</sup> physical error rates plus mitigation strategies for blockchain systems.</dd></div>
+          <div><dt>Why it matters</dt><dd>Concrete logical-qubit and gate budgets turn abstract “quantum threat” talk into engineering timelines for migrating digital money and ledgers to post-quantum cryptography.</dd></div>
+          <div><dt>Source</dt><dd><a href="https://doi.org/10.1103/j3xf-bw18" rel="noopener">doi.org/10.1103/j3xf-bw18</a></dd></div>
+        </dl>
+</article>
+<article class="finding field-physics">
+        <div class="finding-num">06</div>
+        <div class="finding-head"><span class="pill physics">physics</span><span class="pill conf-medium">medium</span></div>
+        <h2>When many-body pure states still look thermal under LOCC</h2>
+        <dl>
+          <div><dt>What changed</dt><dd>Yada, Yoshioka &amp; Sagawa (Physical Review Letters, VoR 21 Aug 2026; DOI 10.1103/zsb1-gx7f; arXiv:2601.14789) ask whether typical many-body pure states that yield vanishing extractable work under strictly local operations remain thermal-equivalent when classical communication is allowed (LOCC). They prove criteria linking that equivalence to multipartite correlation structure, showing that states with asymptotically maximal multipartite entanglement (e.g. Haar-random states) cannot yield extensive LOCC work, while weaker correlation patterns can break the thermal analogy.</dd></div>
+          <div><dt>Why it matters</dt><dd>Quantum thermodynamics needs sharp tests of when pure states behave like heat baths once parties can talk; LOCC extractable work supplies an operational criterion.</dd></div>
+          <div><dt>Source</dt><dd><a href="https://doi.org/10.1103/zsb1-gx7f" rel="noopener">doi.org/10.1103/zsb1-gx7f</a></dd></div>
+        </dl>
+</article>
+<article class="finding field-maths">
+        <div class="finding-num">07</div>
+        <div class="finding-head"><span class="pill maths">maths</span><span class="pill conf-high">high</span></div>
+        <h2>Schäffer’s matrix inequality: exact asymptotic constant</h2>
+        <dl>
+          <div><dt>What changed</dt><dd>Houache, Szehr &amp; Zarouf (arXiv:2608.20217, 20 Aug) resolve a more-than-fifty-year asymptotic gap for Schäffer’s constant <span class="eq">S<sub>n</sub></span> bounding <span class="eq">|det T| ‖T<sup>−1</sup>‖ ≤ S<sub>n</sub> ‖T‖<sup>n−1</sup></span> over invertible operators on n-dimensional complex Banach spaces. They prove <span class="eq">lim<sub>n→∞</sub> S<sub>n</sub>/√n = √e</span>, showing Schäffer’s 1970 upper bound <span class="eq">S<sub>n</sub> ≤ √(en)</span> is asymptotically sharp including the constant, via constructive Banach norms, model operators, and an extremal formulation in the Wiener algebra.</dd></div>
+          <div><dt>Why it matters</dt><dd>A classical quantitative question in Banach-space geometry now has a sharp large-<span class="eq">n</span> constant rather than only growth-rate order (preprint).</dd></div>
+          <div><dt>Source</dt><dd><a href="https://arxiv.org/abs/2608.20217" rel="noopener">arxiv.org/abs/2608.20217</a></dd></div>
+        </dl>
+</article>
+</div>
+<p class="section-label">Sources</p>
+<ul class="sources">
+<li><a class="src-title" href="https://doi.org/10.1103/q2h3-58pz" rel="noopener">Large squeezed cat states in free-space pulses</a><span class="src-meta">Caron et al. · Physical Review X · 10.1103/q2h3-58pz</span></li>
+<li><a class="src-title" href="https://doi.org/10.1103/lx5w-x6wl" rel="noopener">Collective hopping in Cu₇PS₆</a><span class="src-meta">Lin et al. · Physical Review X · 10.1103/lx5w-x6wl</span></li>
+<li><a class="src-title" href="https://doi.org/10.1038/s41467-026-76908-3" rel="noopener">Erratic non-Hermitian skin localization</a><span class="src-meta">Zhong, Kim, Longhi, Jing · Nature Communications · 10.1038/s41467-026-76908-3</span></li>
+<li><a class="src-title" href="https://doi.org/10.1103/4dvk-nglx" rel="noopener">Black-hole scattering at 5PM–2SF</a><span class="src-meta">Driesse et al. · Physical Review Letters · 10.1103/4dvk-nglx</span></li>
+<li><a class="src-title" href="https://doi.org/10.1103/j3xf-bw18" rel="noopener">Quantum resource estimates for secp256k1</a><span class="src-meta">Babbush et al. · PRX Quantum · 10.1103/j3xf-bw18</span></li>
+<li><a class="src-title" href="https://doi.org/10.1103/zsb1-gx7f" rel="noopener">Thermal equivalence under LOCC work</a><span class="src-meta">Yada, Yoshioka, Sagawa · Physical Review Letters · 10.1103/zsb1-gx7f</span></li>
+<li><a class="src-title" href="https://arxiv.org/abs/2608.20217" rel="noopener">Schäffer’s matrix inequality asymptotics</a><span class="src-meta">Houache, Szehr, Zarouf · arXiv:2608.20217</span></li>
+</ul>
+<p class="section-label">Discarded / out of scope</p>
+<div class="discarded"><ul>
+<li>Anonymous 21 Aug APS titles (low-rank GW, ergotropy certification, matrix-product channels, cluster CMB rotation, etc.) — deferred until authors/abstracts resolve.</li>
+<li>Nature news/commentary and Nature Physics research highlights without primary VoR abstracts retrieved here.</li>
+<li>Biology, climate, medicine, and chemistry-heavy Nat. Commun. / Science Advances pieces; thermoelectric multilayers and planar MOT kept on watchlist.</li>
+<li>Items already covered 20–21 Aug (Science Mössbauer/Cu SMACs, Yb Rydberg, nickelate heterostructures, ion gates, Milnor cartography, etc.).</li>
+<li>LHCb Bs→Dsπ CP asymmetry, NNLO DIS hadron production, T̄T deformation Hagedorn continuation, and spinon-singlet stripe pairing — solid but secondary for this digest’s bar; see watchlist in notes.</li>
+</ul></div>
+<footer class="footer"><span>Forward Research</span><span>2026-08-22</span></footer>
+</div></body></html>
