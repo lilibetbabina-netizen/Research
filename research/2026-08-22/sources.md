@@ -1,0 +1,9 @@
+# Sources — 2026-08-22
+
+1. **Bright isolated light pulses reaching 18 attoseconds from high-order harmonic generation by post-compressed Yb lasers** — Gao, Hasan, Liang et al. — https://doi.org/10.1038/s41467-026-76827-3 — Nature Communications, published 21 Aug 2026; primary peer-reviewed experiment.
+2. **An ab initio foundation model of wavefunctions that accurately describes chemical bond breaking** — Foster, Schätzle, Szabó et al. — https://doi.org/10.1038/s41467-026-76604-2 — Nature Communications, published 21 Aug 2026; primary peer-reviewed computational study.
+3. **Observation of Altermagnetic Spin-Splitting in an Intercalated Transition Metal Dichalcogenide** — Sprague, Mondal, Sakhya et al. — https://doi.org/10.1038/s41467-026-76784-x — Nature Communications, published 20 Aug 2026; primary peer-reviewed materials experiment.
+4. **Banach’s Isometric Conjecture over the Complex Field** — Antonio Acuaviva & Tomasz Kania — https://arxiv.org/abs/2608.18257 — submitted 18 Aug 2026; unreviewed preprint completing the remaining complex case and proving a quaternionic counterpart.
+5. **Proof of Lichiardopol’s conjecture on disjoint directed cycles of distinct lengths** — Sandra Albrechtsen & Raphael Steiner — https://arxiv.org/abs/2608.20012 — submitted 20 Aug 2026; unreviewed graph-theory preprint.
+6. **Schäffer’s matrix inequality: the exact asymptotic constant** — Samy Houache, Oleg Szehr & Rachid Zarouf — https://arxiv.org/abs/2608.20217 — submitted 20 Aug 2026; unreviewed operator-theory preprint.
+7. **Observation of Long-Range Collective Flow in O+O and Ne+Ne Collisions and Implications for Nuclear Structure Studies** — CMS Collaboration — https://doi.org/10.1103/26wx-tg6f — Physical Review Letters, published 17 Aug 2026; extended-window watchlist item, also https://arxiv.org/abs/2510.02580.
